@@ -1,0 +1,42 @@
+package bd.com.Batch13;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class AutomationExam extends BaseDriver {
+	
+	@Test(priority = 0)
+	public void openUrl() throws InterruptedException {
+		
+		driver.get("https://itera-qa.azurewebsites.net/home/automation");
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+	}
+	
+	
+	@Test(priority = 1)
+	public void automationExam() throws InterruptedException {
+		
+		WebElement name = driver.findElement(By.id("name"));
+		WebElement phone = driver.findElement(By.id("phone"));
+		WebElement email = driver.findElement(By.id("email"));
+		WebElement password = driver.findElement(By.id("password"));
+		WebElement address = driver.findElement(By.id("address"));
+		WebElement submitButton = driver.findElement(By.name("submit"));
+		
+		name.sendKeys("Ashik Arman");
+		Thread.sleep(2000);
+		phone.sendKeys("01671665363");
+		Thread.sleep(2000);
+		email.sendKeys("test123@gmail.com");
+		Thread.sleep(2000);
+		password.sendKeys("123456789");
+		Thread.sleep(2000);
+		address.sendKeys("Dhaka-Bangladesh");
+		Thread.sleep(2000);
+		submitButton.click();
+		Thread.sleep(4000);
+	}
+	
+}
